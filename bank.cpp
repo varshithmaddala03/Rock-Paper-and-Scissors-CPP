@@ -24,7 +24,7 @@ int main()
       cout << "4. EXIT\n";
       cout << "Enter choice: ";
 
-            if (!(cin >> choice))
+      if (!(cin >> choice))
       {
          cin.clear();
          cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -42,11 +42,13 @@ int main()
       case 2:
          balance = balance + deposit();
          showbalance(balance);
+         cout << "you deposited " << balance << "\n";
          break;
 
       case 3:
          balance = balance - withdraw(balance);
          showbalance(balance);
+
          break;
 
       case 4:
@@ -121,6 +123,7 @@ double withdraw(double balance)
    }
    else
    {
+      cout << " You withdraw " << amount << "Rs." <<"\n";
       return amount;
    }
 }
